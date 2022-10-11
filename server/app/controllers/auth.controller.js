@@ -114,5 +114,5 @@ exports.signout = async (req, res) => {
   } catch (err) {
     this.next(err);
   }
-};e
+};
 
