@@ -7,7 +7,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:5173"
 };
 
 app.use(cors(corsOptions));
@@ -28,9 +28,10 @@ app.use(
 
 const db = require("./app/models");
 const Role = db.role;
-
+const password = encodeURIComponent(dbConfig.PASS)
+console.log(password)
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.POT}/${dbConfig.DB}`, {
+  .connect(`mongodb+srv://lanavarrog:${password}@vini-pregati.8rswwcr.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
