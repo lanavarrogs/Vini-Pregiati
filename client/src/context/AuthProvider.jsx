@@ -13,9 +13,17 @@ const AuthProvider = ({children}) => {
       const token = localStorage.getItem('token')
       if(!token) return;
       
+      const config = {
+        headers:{
+          "Accept" : "application/json"
+        },
+        session:{
+          "token": token
+        }
+      }
+      
       try {
-        const token = ''
-        const {data} = await axios.get('http://localhost:8080/api/user')
+        const { data } = await axios.post('http://localhost:8080/api/user',config)
         console.log(data);
       } catch (error) {
         

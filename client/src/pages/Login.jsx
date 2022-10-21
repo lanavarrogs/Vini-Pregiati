@@ -5,6 +5,7 @@ import axios from 'axios'
 import useAuth from "../hooks/useAuth"
 
 
+
 const Login = () => {
 
   const [email,setEmail] = useState('')
@@ -22,8 +23,11 @@ const Login = () => {
 
     try {
       const { data } = await axios.post('http://localhost:8080/api/auth/signin',{email,password})
-      localStorage.setItem('token',data.token)
-      setAuth(data)
+      if(data.token){
+        localStorage.setItem('token',data.token)
+        setAuth(data)
+      }
+    
     
     } catch (error) {
       console.log(error.response.data.msg)

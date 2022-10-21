@@ -37,7 +37,7 @@ exports.signup = (req, res) => {
               return;
             }
 
-            res.send({ message: "User was registered successfully!" });
+            res.send({ message: "Usuario Registrado exitosamente!" });
           });
         }
       );
@@ -55,7 +55,7 @@ exports.signup = (req, res) => {
             return;
           }
 
-          res.send({ message: "User was registered successfully!" });
+          res.send({ message: "User was registered successfully!"});
         });
       });
     }
@@ -102,7 +102,8 @@ exports.signin = (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        roles: authorities
+        roles: authorities,
+        token: token
       });
     });
 };

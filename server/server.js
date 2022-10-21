@@ -29,7 +29,6 @@ app.use(
 const db = require("./app/models");
 const Role = db.role;
 const password = encodeURIComponent(dbConfig.PASS)
-console.log(password)
 db.mongoose
   .connect(`mongodb+srv://lanavarrog:${password}@vini-pregati.8rswwcr.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
