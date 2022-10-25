@@ -1,3 +1,10 @@
 body{
   font-family: 'Noto Serif','san-serif','Helvetica';
+  height: 100vh;
+}
+.highlighted{
+  border-bottom: 2px solid white;
+}
+.bg-wine{
+  background-image: url('./assets/wine.png');
 }

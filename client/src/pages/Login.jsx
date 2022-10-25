@@ -30,7 +30,7 @@ const Login = () => {
     
     
     } catch (error) {
-      console.log(error.response.data.msg)
+      console.log(error)
     }
 
   }
@@ -78,7 +78,7 @@ const Login = () => {
         <nav className="lg:flex lg:justify-between">
           <Link
             className="block text-center my-5 text-slate-200 uppercase text-sm"
-            to="/register"
+            to="/auth/register"
           >No tienes Cuenta? Registrate</Link>
 
           <Link

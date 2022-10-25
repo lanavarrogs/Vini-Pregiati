@@ -9,6 +9,9 @@ import { AuthProvider } from './context/AuthProvider';
 
 import HomeLayout from './layouts/HomeLayout';
 import Home from './pages/Home';
+import QuienesSomos from './pages/QuienesSomos';
+import Catalogo from './pages/Catalogo';
+import Contactanos from './pages/Contactanos';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
 
           <Route path="/" element={<HomeLayout/>}>
             <Route index element={<Home/>}/>
+            <Route path='/quienes-somos' element={<QuienesSomos/>}/>
+            <Route path='/catalogo' element={<Catalogo/>}/> 
+            <Route path='/contactanos' element={<Contactanos/>}/>
           </Route>
         </Routes>
       </AuthProvider>

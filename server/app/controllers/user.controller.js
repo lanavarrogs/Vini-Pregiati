@@ -2,7 +2,8 @@ exports.allAccess = (req, res) => {
   res.status(200).send("Public Content.");
 };
 
-exports.userBoard = (req, res) => {
+exports.userBoard = async (req, res) => {
+  const { user } = req;
   res.status(200).send('');
 };
 
