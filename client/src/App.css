@@ -7,4 +7,7 @@ body{
 }
 .bg-wine{
   background-image: url('./assets/wine.png');
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
 }

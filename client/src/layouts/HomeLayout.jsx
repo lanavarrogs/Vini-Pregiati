@@ -6,7 +6,7 @@ const HomeLayout = () => {
   return (
     <>
       <Header/>
-      <main className='container mx-auto mt-2 md:mt-10'>
+      <main>
         <Outlet/>
       </main>
     </>

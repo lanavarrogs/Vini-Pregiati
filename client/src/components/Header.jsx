@@ -1,8 +1,11 @@
-import { useState } from 'react'
 import {  Link,NavLink } from 'react-router-dom'
 import logo from '../assets/LOGO.png'
 import '../App.css'
 
+
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => {
   
@@ -56,16 +59,18 @@ const Header = () => {
         </nav>
 
 
-        <div>
+        <div className='text-white'>
           <ul className='flex'>
             <li className='mx-5'>
-                <p>Buscar</p>
+              <SearchIcon/>
             </li>
             <li className='mx-5'>
-                <p>Carrito</p>
+                <ShoppingBagIcon/>
             </li>
             <li className='mx-5'>
-                <p>Perfil</p>
+                <Link to="/auth">
+                  <AccountCircleIcon/>
+                </Link>
             </li>
           </ul>
         </div>
