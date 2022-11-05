@@ -1,4 +1,5 @@
 import {  Link,NavLink } from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
 import logo from '../assets/LOGO.png'
 import '../App.css'
 
@@ -8,14 +9,17 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => {
-  
+
   let activeClassName = "highlighted";
+
+  const { auth } = useAuth();
+
 
   return (
       <div className='flex h-24 items-center m-4 justify-between'>
         <div>
           <Link>
-            <img className='object-contain h-24' src={logo} />
+            <img className='object-contain h-24' src={logo} /> 
           </Link>
           
         </div>
@@ -48,6 +52,7 @@ const Header = () => {
               >Catalogo</NavLink>
             </li>
             <li className='mx-5'>
+              
               <NavLink
                 to = '/contactanos'
                 className={({ isActive }) =>
@@ -65,10 +70,12 @@ const Header = () => {
               <SearchIcon/>
             </li>
             <li className='mx-5'>
-                <ShoppingBagIcon/>
+                <Link to='/carrito'>
+                  <ShoppingBagIcon/>
+                </Link>
             </li>
             <li className='mx-5'>
-                <Link to="/auth">
+                <Link to={auth._id ? '/profile' : '/auth'}>
                   <AccountCircleIcon/>
                 </Link>
             </li>

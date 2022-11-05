@@ -12,6 +12,8 @@ import Home from './pages/Home';
 import QuienesSomos from './pages/QuienesSomos';
 import Catalogo from './pages/Catalogo';
 import Contactanos from './pages/Contactanos';
+import Carrito from './pages/Carrito';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
             <Route path='/quienes-somos' element={<QuienesSomos/>}/>
             <Route path='/catalogo' element={<Catalogo/>}/> 
             <Route path='/contactanos' element={<Contactanos/>}/>
+            <Route path='/carrito' element={<Carrito/>}/>
+            <Route path='/profile' element={<Profile/>}/>
           </Route>
         </Routes>
       </AuthProvider>
