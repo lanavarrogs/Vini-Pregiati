@@ -7,7 +7,7 @@ module.exports = function (app) {
     next();
   });
 
-  app.post("/api/catalog", [authJwt.verifyToken], controller.catalogBoard);
+  app.post("/api/catalog", controller.catalogBoard);
 
   app.get(
     "/api/catalog/mod",
