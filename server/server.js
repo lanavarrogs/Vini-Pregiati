@@ -7,7 +7,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:5173"
+  origin: "http://localhost:5173",
 };
 
 app.use(cors(corsOptions));
@@ -22,23 +22,26 @@ app.use(
   cookieSession({
     name: "cookie-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
-    httpOnly: true
+    httpOnly: true,
   })
 );
 
 const db = require("./app/models");
 const Role = db.role;
-const password = encodeURIComponent(dbConfig.PASS)
+const password = encodeURIComponent(dbConfig.PASS);
 db.mongoose
-  .connect(`mongodb+srv://lanavarrog:${password}@vini-pregati.8rswwcr.mongodb.net/?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  .connect(
+    `mongodb+srv://lanavarrog:${password}@vini-pregati.8rswwcr.mongodb.net/?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
@@ -51,6 +54,7 @@ app.get("/", (req, res) => {
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
+require("./app/routes/catalog.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -62,8 +66,8 @@ function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
-        name: "user"
-      }).save(err => {
+        name: "user",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -72,8 +76,8 @@ function initial() {
       });
 
       new Role({
-        name: "moderator"
-      }).save(err => {
+        name: "moderator",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -82,8 +86,8 @@ function initial() {
       });
 
       new Role({
-        name: "admin"
-      }).save(err => {
+        name: "admin",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -92,5 +96,4 @@ function initial() {
       });
     }
   });
-};
-
+}
