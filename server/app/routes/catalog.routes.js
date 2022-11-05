@@ -7,7 +7,7 @@ module.exports = function (app) {
     next();
   });
 
-  app.post("/api/catalog", controller.catalogBoard);
+  app.get("/api/catalog", controller.catalogBoard);
 
   app.get(
     "/api/catalog/mod",
