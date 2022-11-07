@@ -8,7 +8,7 @@ const Home = () => {
           <h1 className='text-6xl text-white '> Vinos de todos los lados del mundo <span className='text-black font-bold'>Todos los Sabores</span></h1>
           <p className='mt-5 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus placeat corporis repellendus esse praesentium expedita consequatur doloremque provident quod, nam dolores ad quaerat aut est, dolorem obcaecati quia architecto modi?</p>
           <div className='flex justify-end'>
-            <button className='mx-5 py-3 px-4 text-white font-bold rounded bg-[#E82C48] hover:cursor-pointer hover:bg-[#BF243C] transition-colors '> Continua comprando </button>
+            <button className='mx-5 my-2 py-3 px-4 text-white font-bold rounded bg-[#E82C48] hover:cursor-pointer hover:bg-[#BF243C] transition-colors '> Continua comprando </button>
           </div>
         </div>
       <div>

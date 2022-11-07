@@ -14,6 +14,7 @@ import Catalogo from './pages/Catalogo';
 import Contactanos from './pages/Contactanos';
 import Carrito from './pages/Carrito';
 import Profile from './pages/Profile';
+import Descrption from './pages/Descrption';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path='/contactanos' element={<Contactanos/>}/>
             <Route path='/carrito' element={<Carrito/>}/>
             <Route path='/profile' element={<Profile/>}/>
+            <Route path='/description/:id' element={<Descrption/>}/>
           </Route>
         </Routes>
       </AuthProvider>

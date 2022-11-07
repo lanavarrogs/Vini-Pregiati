@@ -1,8 +1,11 @@
 import React from 'react'
+import ListWines from '../components/ListWines'
 
 const Catalogo = () => {
   return (
-    <div>Catalogo</div>
+    <div className='container mx-auto '>
+      <ListWines/>
+    </div>
   )
 }
 

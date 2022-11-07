@@ -11,3 +11,8 @@ body{
   background-position: top center;
   height: 100vh;
 }
+@media only screen and (max-width: 600px) {
+  .bg-wine{
+    height: 100%;
+  }
+}

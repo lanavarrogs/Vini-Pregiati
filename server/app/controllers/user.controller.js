@@ -4,7 +4,6 @@ exports.allAccess = (req, res) => {
 
 exports.userBoard = async (req, res) => {
   const { user } = req;
-  console.log(user)
   res.status(200).json(user);
 };
 

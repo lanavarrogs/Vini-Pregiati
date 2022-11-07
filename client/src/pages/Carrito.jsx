@@ -4,14 +4,13 @@ import useAuth from '../hooks/useAuth'
 
 const Carrito = () => {
 
-  const { auth,cargando } = useAuth()
+  const { auth } = useAuth()
   
 
-  if(cargando) return 'Cargando...'
 
   return (
     <>
-      { auth._id  ? 'Autenticado' : <Navigate to='/auth' /> }
+      { auth._id || auth.id ? 'Autenticado' : <Navigate to='/auth' /> }
     </>
   )
 }

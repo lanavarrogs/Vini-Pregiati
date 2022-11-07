@@ -5,11 +5,10 @@ import useAuth from '../hooks/useAuth'
 
 const Profile = () => {
 
-  const { auth } = useAuth();
-
+  const { auth} = useAuth();
   return (
       <>
-        { auth._id  ? 'Autenticado' : <Navigate to='/auth' /> }
+        { auth._id || auth.id  ? 'Autenticado' : <Navigate to='/auth' /> }
       </>
     )
 }

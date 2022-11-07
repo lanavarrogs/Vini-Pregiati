@@ -11,6 +11,7 @@ const Login = () => {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
+  const [alerta,setAlerta] = useState({})
   
   const navigate = useNavigate()
 
@@ -20,7 +21,10 @@ const Login = () => {
     e.preventDefault();
 
     if([email,password].includes('')){
-      console.log('Error');
+      setAlerta({
+        msg: 'Todos los campos son obligatorios',
+        error: true
+      })
     }
     
 
