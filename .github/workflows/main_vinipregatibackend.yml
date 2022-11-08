@@ -22,6 +22,7 @@ jobs:
           node-version: '18.x'
 
       - name: npm install, build, and test
+        app_location: "/server"
         run: |
           npm install
           npm run build --if-present
