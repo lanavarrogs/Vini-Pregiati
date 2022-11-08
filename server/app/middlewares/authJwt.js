@@ -5,19 +5,19 @@ const User = db.user;
 const Role = db.role;
 
 verifyToken = (req, res, next) => {
-  let session_token  = req.session.token
   let token = req.body.session.token;
-  console.log(session_token);
 
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
 
-  jwt.verify(token, config.secret, (err, decoded) => {
+  jwt.verify(token, config.secret, async (err, decoded) => {
     if (err) {
       return res.status(401).send({ message: "Unauthorized!" });
     }
-    req.user = decoded.id
+    id = decoded.id
+    const user = await User.findById(id)
+    req.user = user
     next();
   });
 };

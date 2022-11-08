@@ -1,5 +1,5 @@
-import { Link,useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 import clienteAxios from "../config/clienteAxios"
 import axios from 'axios'
 import useAuth from "../hooks/useAuth"
@@ -8,8 +8,12 @@ import useAuth from "../hooks/useAuth"
 
 const Login = () => {
 
+
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
+  const [alerta,setAlerta] = useState({})
+  
+  const navigate = useNavigate()
 
   const { setAuth } = useAuth();
   
@@ -17,7 +21,10 @@ const Login = () => {
     e.preventDefault();
 
     if([email,password].includes('')){
-      console.log('Error');
+      setAlerta({
+        msg: 'Todos los campos son obligatorios',
+        error: true
+      })
     }
     
 
@@ -26,6 +33,7 @@ const Login = () => {
       if(data.token){
         localStorage.setItem('token',data.token)
         setAuth(data)
+        navigate('/profile')
       }
     
     

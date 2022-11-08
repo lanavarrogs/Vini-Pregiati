@@ -4,7 +4,7 @@ exports.allAccess = (req, res) => {
 
 exports.userBoard = async (req, res) => {
   const { user } = req;
-  res.status(200).send('');
+  res.status(200).json(user);
 };
 
 exports.adminBoard = (req, res) => {
