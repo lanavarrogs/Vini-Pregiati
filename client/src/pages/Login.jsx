@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
-import clienteAxios from "../config/clienteAxios"
 import axios from 'axios'
 import useAuth from "../hooks/useAuth"
 
@@ -29,7 +28,7 @@ const Login = () => {
     
 
     try {
-      const { data } = await axios.post('http://localhost:8080/api/auth/signin',{email,password})
+      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signin',{email,password})
       if(data.token){
         localStorage.setItem('token',data.token)
         setAuth(data)
