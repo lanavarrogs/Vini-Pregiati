@@ -59,7 +59,7 @@ const Register = () => {
     //Register the user with the api connection
     let username = nombre;
     try {
-      const { data } = await axios.post('localhost:8080/api/auth/signup', {username,email,password} )
+      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signup', {username,email,password} )
       
       setNombre('')
       setEmail('')
