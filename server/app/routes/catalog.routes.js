@@ -15,6 +15,8 @@ module.exports = function (app) {
     controller.moderatorCatalogBoard
   );
 
+  app.get("/api/catalog/:id",controller.catalogId);
+
   app.get(
     "/api/catalog/admin",
     [authJwt.verifyToken, authJwt.isAdmin],

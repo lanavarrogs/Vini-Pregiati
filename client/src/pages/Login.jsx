@@ -29,7 +29,7 @@ const Login = () => {
     
 
     try {
-      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signin',{email,password})
+      const { data } = await axios.post('http://localhost:8080/api/auth/signin',{email,password})
       if(data.token){
         localStorage.setItem('token',data.token)
         setAuth(data)
