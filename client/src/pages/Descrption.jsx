@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import useCatalog from '../hooks/useCatalog';
-import wine from '../assets/white_wine.png'
+import useCart from '../hooks/useCart';
+import wine from '../assets/white_wine.png';
 
 
 const Descrption = () => {
@@ -9,6 +10,8 @@ const Descrption = () => {
   const params = useParams();
 
   const { product,obtenerProducto } = useCatalog()
+  const { carItems,addItem } = useCart()
+
   useEffect(() => {
     obtenerProducto(params.id)
   },[])
@@ -28,7 +31,7 @@ const Descrption = () => {
             <p className='text-lg my-5'>{product.description}</p>
             <p className='font-bold text-2xl'>Precio:</p>
             <p className='text-[#58D7C4] text-xl mb-10'>${product.price}</p>
-            <button className='bg-[#F22E4B] p-3 mb-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors text-center'>Agregar al carrito</button>
+            <button className='bg-[#F22E4B] p-3 mb-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors text-center' onClick={() => addItem(product)}>Agregar al carrito</button>
           </div>
         </div>
       </div>

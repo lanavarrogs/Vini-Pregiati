@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState, useEffect, createContext } from "react";
-import clienteAxios from '../config/clienteAxios'
 
 const CatalogContext = createContext();
 
