@@ -20,7 +20,6 @@ const CartProvider = ({children}) => {
   },[carItems]);
   
   const addItem = product => {
-    console.log(product)
     const inCart = carItems.find(productInCart => productInCart.code === product.code)
 
     if(inCart){
@@ -33,12 +32,29 @@ const CartProvider = ({children}) => {
     }
     console.log(carItems)
   }
+
+  const deleteItem = product => {
+    const inCart = carItems.find(productInCart => productInCart.code === product.code)
+
+    if(inCart.amount === 1){
+      const items = carItems.filter( productInCart => productInCart.code !== product.code)
+      setCarItems(items)
+    }else{
+      const items = carItems.map(productInCart => (
+        productInCart.code === product.code ? {...inCart, amount: inCart.amount - 1 } : productInCart
+      ))
+      setCarItems(items)
+    }
+  
+
+  }
   
   return(
     <CartContext.Provider
       value={{
         carItems,
-        addItem
+        addItem,
+        deleteItem
       }}
     >
       {children}
