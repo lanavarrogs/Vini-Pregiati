@@ -6,6 +6,7 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
 
+  const [ totalCart, setTotalCart ] = useState(0);
 
   const Toast = Swal.mixin({
     toast: true,
@@ -32,11 +33,18 @@ const CartProvider = ({children}) => {
 
   useEffect(() => {
     localStorage.setItem('carProducts', JSON.stringify(carItems))
+    const values = () => {
+      let item = 0
+      carItems.forEach( element => {
+        item += element.amount
+      })
+      setTotalCart(item)
+    }
+    values()
   },[carItems]);
   
   const addItem = product => {
     const inCart = carItems.find(productInCart => productInCart.code === product.code)
-
     if(inCart){
       const items = carItems.map(productInCart => (
         productInCart.code === product.code ? {...inCart, amount: inCart.amount + 1 } : productInCart
@@ -67,7 +75,7 @@ const CartProvider = ({children}) => {
       ))
       setCarItems(items)
     }
-  
+    
 
   }
   
@@ -76,7 +84,8 @@ const CartProvider = ({children}) => {
       value={{
         carItems,
         addItem,
-        deleteItem
+        deleteItem,
+        totalCart
       }}
     >
       {children}

@@ -14,7 +14,8 @@ const Header = () => {
   let activeClassName = "highlighted";
 
   const { auth } = useAuth();
-  const { carItems } = useCart();
+  const { totalCart } = useCart();
+
 
 
   return (
@@ -92,7 +93,7 @@ const Header = () => {
               </li>
               <li className='mx-5 '>
                   <Link className='relative bottom-3' to='/carrito'>
-                    <div className='bg-[#58D7C4] rounded-xl text-center relative top-3 left-3'>1</div>
+                    <div className='bg-[#58D7C4] rounded-xl text-center relative top-3 left-3'>{totalCart}</div>
                     <ShoppingBagIcon/>
                   </Link>
               </li>
