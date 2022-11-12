@@ -9,13 +9,15 @@ module.exports = function (app) {
 
   app.get("/api/catalog", controller.catalogBoard);
 
+  app.post("/api/purchase", controller.catalogPurchase);
+
   app.get(
     "/api/catalog/mod",
     [authJwt.verifyToken, authJwt.isModerator],
     controller.moderatorCatalogBoard
   );
 
-  app.get("/api/catalog/:id",controller.catalogId);
+  app.get("/api/catalog/:id", controller.catalogId);
 
   app.get(
     "/api/catalog/admin",

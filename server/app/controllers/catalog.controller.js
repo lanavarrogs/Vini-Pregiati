@@ -1,14 +1,30 @@
 const db = require("../models");
 const Product = db.product;
+const Purchase = db.purchase;
 
 exports.catalogBoard = async (req, res) => {
   const products = await Product.find();
   res.status(200).json(products);
 };
 
-exports.catalogId = async (req,res) => {
+exports.catalogPurchase = async (req, res) => {
+  const purchase = new Purchase({
+    user: req.body.id,
+    products: req.body.products,
+  });
+
+  purchase.save((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    res.status(201).send({ message: "purchase created" });
+  });
+};
+
+exports.catalogId = async (req, res) => {
   const { id } = req.params;
-  const product = await Product.findOne({'code': id});
+  const product = await Product.findOne({ code: id });
   res.status(200).json(product);
 };
 
