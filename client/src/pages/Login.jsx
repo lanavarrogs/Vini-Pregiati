@@ -1,9 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
-import clienteAxios from "../config/clienteAxios"
 import axios from 'axios'
 import useAuth from "../hooks/useAuth"
-
+import Alerta from "../components/Alerta"
 
 
 const Login = () => {
@@ -38,14 +37,22 @@ const Login = () => {
     
     
     } catch (error) {
-      console.log(error)
+      setAlerta({
+        msg: 'Usuario o contraseña incorrecto',
+        error: true
+      })
     }
 
   }
 
+  const message = alerta.msg
+
   return (
     <>
       <h1 className="text-white font-black text-6xl text-center">Inciar Sesion</h1>
+
+      {message  && <Alerta alerta={alerta}/>}
+
       <form 
         className="my-10 bg-white shadow rounded-lg p-5 "
         onSubmit={handleSubmit}

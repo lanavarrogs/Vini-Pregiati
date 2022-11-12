@@ -94,7 +94,7 @@ const Header = () => {
                   </Link>
               </li>
               <li className='mx-5'>
-                  <Link to={auth._id ? `/profile` : '/auth'}>
+                  <Link to={auth._id || auth.id ? `/profile` : '/auth'}>
                     <AccountCircleIcon/>
                   </Link>
               </li>

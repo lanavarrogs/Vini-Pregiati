@@ -19,6 +19,10 @@ const Carrito = () => {
         <ListCart
           carItems={carItems}
         />
+        <div className='flex justify-center' >
+          <button className="bg-[#F22E4B] w-5/6 md:w-1/3 p-3 m-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors">Comprar</button>
+        </div>
+        
       </div>
       : 
       <Navigate to='/auth' /> }

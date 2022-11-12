@@ -10,7 +10,7 @@ const Descrption = () => {
   const params = useParams();
 
   const { product,obtenerProducto } = useCatalog()
-  const { carItems,addItem } = useCart()
+  const { addItem } = useCart()
 
   useEffect(() => {
     obtenerProducto(params.id)

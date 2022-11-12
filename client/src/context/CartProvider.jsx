@@ -1,9 +1,24 @@
 import { useState, useEffect, createContext } from "react";
+import Swal from "sweetalert2";
 
 
 const CartContext = createContext();
 
 const CartProvider = ({children}) => {
+
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+
   
   const [ carItems,setCarItems ] = useState(() => {
     try{
@@ -30,7 +45,13 @@ const CartProvider = ({children}) => {
     }else{
       setCarItems([...carItems, {...product, amount: 1}])
     }
-    console.log(carItems)
+    
+
+    Toast.fire({
+        icon:'success',
+        title: 'Agregado al carrito exitosamente'
+      })
+
   }
 
   const deleteItem = product => {
