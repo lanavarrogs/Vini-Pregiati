@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
       }
       
       try {
-        const { data } = await axios.post('http://localhost:8080/api/user',config) 
+        const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/user',config) 
         setAuth(data)
         navigate('/')
       } catch (error) {
