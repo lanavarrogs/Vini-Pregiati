@@ -9,7 +9,7 @@ const CartProvider = ({children}) => {
 
   const Toast = Swal.mixin({
     toast: true,
-    position: 'center',
+    position: 'top-center',
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
@@ -47,10 +47,11 @@ const CartProvider = ({children}) => {
     }
     
 
-    Toast.fire({
-        icon:'success',
-        title: 'Agregado al carrito exitosamente'
-      })
+    Swal.fire({
+    icon: 'success',
+    title: product.name.toUpperCase() ,
+    text: 'Se grego correctamente al carrito',
+  })
 
   }
 

@@ -8,7 +8,7 @@ const Catalogo = () => {
 
   return (
     <div className='container mx-auto '>
-      <h2 className='text-white font-black text-6xl text-center mt-10'>Catalogo principal</h2>
+      <h2 className='text-white font-black text-6xl text-center mt-10'>Catálogo principal</h2>
       <ListWines catalogo={catalog}/>
     </div>
   )

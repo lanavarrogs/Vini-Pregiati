@@ -1,5 +1,6 @@
 import {  Link,NavLink } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import useCart from '../hooks/useCart'
 import logo from '../assets/LOGO.png'
 import '../App.css'
 
@@ -13,6 +14,7 @@ const Header = () => {
   let activeClassName = "highlighted";
 
   const { auth } = useAuth();
+  const { carItems } = useCart();
 
 
   return (
@@ -50,7 +52,7 @@ const Header = () => {
                   className={({ isActive }) =>
                 isActive ? activeClassName : undefined
               }
-                >Catalogo</NavLink>
+                >Catálogo</NavLink>
               </li>
               <li className='m-2 md:mx-5'>
                 
@@ -88,8 +90,9 @@ const Header = () => {
               <li className='mx-5'>
                 <SearchIcon/>
               </li>
-              <li className='mx-5'>
-                  <Link to='/carrito'>
+              <li className='mx-5 '>
+                  <Link className='relative bottom-3' to='/carrito'>
+                    <div className='bg-[#58D7C4] rounded-xl text-center relative top-3 left-3'>1</div>
                     <ShoppingBagIcon/>
                   </Link>
               </li>

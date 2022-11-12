@@ -13,7 +13,7 @@ const Carrito = () => {
     <>
       { auth._id || auth.id 
       
-      ? 
+      ?
       <div className='container mx-auto '>
         <h2 className='text-white font-black text-6xl text-center mt-10'>Carrito</h2>
         <ListCart

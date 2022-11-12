@@ -28,7 +28,7 @@ const Login = () => {
     
 
     try {
-      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signin',{email,password})
+      const { data } = await axios.post('http://localhost:8080/api/auth/signin',{email,password})
       if(data.token){
         localStorage.setItem('token',data.token)
         setAuth(data)
@@ -64,7 +64,7 @@ const Login = () => {
           >Email</label>
           <input
             type='email'
-            placeholder="Correo electronico"
+            placeholder="Correo electrónico"
             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
             value={email}
             onChange={e => setEmail(e.target.value)}
