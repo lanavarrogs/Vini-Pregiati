@@ -3,11 +3,16 @@ const Product = db.product;
 const Purchase = db.purchase;
 
 exports.catalogBoard = async (req, res) => {
-  const products = await Product.find();
+  const products = await Product.find({ status: "" });
   res.status(200).json(products);
 };
 
 exports.catalogPurchase = async (req, res) => {
+  for (let i = 0; i <= req.body.products.length; i++) {
+    const product = array[i];
+    product.status = "purchased";
+  }
+
   const purchase = new Purchase({
     user: req.body.id,
     products: req.body.products,
