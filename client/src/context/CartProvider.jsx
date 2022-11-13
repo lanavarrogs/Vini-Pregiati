@@ -6,21 +6,9 @@ const CartContext = createContext();
 
 const CartProvider = ({children}) => {
 
-  const [ totalCart, setTotalCart ] = useState(0);
+  const [ totalCart, setTotalCart ] = useState(0); 
+  const [totalPrice,setTotalPrice] = useState(0);
 
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-center',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    }
-  })
-
-  
   const [ carItems,setCarItems ] = useState(() => {
     try{
       const productoStorage = localStorage.getItem('carProducts');
@@ -40,6 +28,16 @@ const CartProvider = ({children}) => {
       })
       setTotalCart(item)
     }
+
+    const getTotal = () => {
+      let item = 0
+      carItems.forEach( element => {
+        item += element.price * element.amount
+      })
+      setTotalPrice(item)
+    }
+
+    getTotal()
     values()
   },[carItems]);
   
@@ -47,20 +45,18 @@ const CartProvider = ({children}) => {
     const inCart = carItems.find(productInCart => productInCart.code === product.code)
     if(inCart){
       const items = carItems.map(productInCart => (
-        productInCart.code === product.code ? {...inCart, amount: inCart.amount + 1 } : productInCart
+        productInCart.code === product.code ? {...inCart, amount: inCart.amount + 1, stock: inCart.stock - 1 } : productInCart
       ))
       setCarItems(items)
     }else{
       setCarItems([...carItems, {...product, amount: 1}])
     }
-    
-
-    Swal.fire({
-    icon: 'success',
-    title: product.name.toUpperCase() ,
-    text: 'Se grego correctamente al carrito',
-  })
-
+      Swal.fire({
+      icon: 'success',
+      title: product.name.toUpperCase() ,
+      text: 'Se grego correctamente al carrito',
+    })
+  
   }
 
   const deleteItem = product => {
@@ -71,12 +67,21 @@ const CartProvider = ({children}) => {
       setCarItems(items)
     }else{
       const items = carItems.map(productInCart => (
-        productInCart.code === product.code ? {...inCart, amount: inCart.amount - 1 } : productInCart
+        productInCart.code === product.code ? {...inCart, amount: inCart.amount - 1, stock: inCart.stock + 1 } : productInCart
       ))
       setCarItems(items)
     }
     
 
+  }
+
+  const purchase = () => {
+    try {
+      const { data } = axios.post('http://localhost:8080/api/purchase')
+      
+    } catch (error) {
+      
+    }
   }
   
   return(
@@ -85,7 +90,8 @@ const CartProvider = ({children}) => {
         carItems,
         addItem,
         deleteItem,
-        totalCart
+        totalCart,
+        totalPrice
       }}
     >
       {children}
