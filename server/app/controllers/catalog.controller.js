@@ -9,7 +9,7 @@ exports.catalogBoard = async (req, res) => {
 
 exports.catalogPurchase = async (req, res) => {
   for (let i = 0; i <= req.body.products.length; i++) {
-    const product = array[i];
+    const product = req.body.products[i];
     product.status = "purchased";
   }
 
