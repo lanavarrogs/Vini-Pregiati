@@ -3,23 +3,28 @@ const Product = db.product;
 const Purchase = db.purchase;
 
 exports.catalogBoard = async (req, res) => {
-  const products = await Product.find({ status: "" });
+  const products = await Product.find();
   res.status(200).json(products);
 };
 
 exports.catalogPurchase = async (req, res) => {
-  for (let i = 0; i <= req.body.products.length; i++) {
+
+
+  for (let i = 0; i <= req.body.products.length - 1 ; i++) {
     const product = req.body.products[i];
-    product.status = "purchased";
+    product.status = 'purchased'
   }
+  
 
   const purchase = new Purchase({
     user: req.body.id,
     products: req.body.products,
   });
 
+
   purchase.save((err, user) => {
     if (err) {
+      console.log(err)
       res.status(500).send({ message: err });
       return;
     }

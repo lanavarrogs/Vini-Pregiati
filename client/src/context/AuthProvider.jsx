@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AuthContext = createContext();
 
@@ -46,12 +47,27 @@ const AuthProvider = ({children}) => {
     autenticarUsuario() 
   },[])
 
+
+  const logout = async () =>{
+    
+    try {
+      const { data } = await axios.post('http://localhost:8080/api/auth/signout')
+      console.log(data)
+      localStorage.removeItem('token')
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
+
   return(
     <AuthContext.Provider
       value={{
         auth,
         setAuth,
-        loading
+        loading,
+        logout
       }}
     >
       {children}
