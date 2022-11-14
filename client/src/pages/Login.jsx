@@ -49,7 +49,7 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="text-white font-black text-6xl text-center">Inciar Sesion</h1>
+      <h1 className="text-white font-black text-6xl text-center">Iniciar sesión</h1>
 
       {message  && <Alerta alerta={alerta}/>}
 

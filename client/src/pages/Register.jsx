@@ -110,7 +110,7 @@ const Register = () => {
           >Email</label>
           <input
             type='email'
-            placeholder="Correo electronico"
+            placeholder="Correo electrónico"
             className="w-full mt-3 p-3 border rounded-xl bg-gray-50"
             value={email}
             onChange={e => setEmail(e.target.value)}

@@ -75,14 +75,7 @@ const CartProvider = ({children}) => {
 
   }
 
-  const purchase = () => {
-    try {
-      const { data } = axios.post('http://localhost:8080/api/purchase')
-      
-    } catch (error) {
-      
-    }
-  }
+
   
   return(
     <CartContext.Provider
