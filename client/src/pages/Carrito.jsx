@@ -12,7 +12,7 @@ import useCart from '../hooks/useCart'
 const Carrito = () => {
 
   const { auth } = useAuth();
-  const { carItems, totalPrice } = useCart();
+  const { carItems, setCarItems , totalPrice, } = useCart();
 
   const purchase = async () => {
     if(carItems.length <=0 ){
@@ -23,7 +23,6 @@ const Carrito = () => {
       })
     }else{
       try {
-          console.log(carItems)
           const { data } = await axios.post('http://localhost:8080/api/purchase', {id: auth.id , products: carItems})
           if(data.message === 'purchase created'){
             Swal.fire({
@@ -32,6 +31,8 @@ const Carrito = () => {
               text: 'Compra realizada con exito',
             })
           }
+          setCarItems([])
+          localStorage.removeItem('carProducts')
       } catch (error) {
         console.log(error)
       }
