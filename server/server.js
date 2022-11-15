@@ -7,7 +7,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "http://vinipregati.eastus.cloudapp.azure.com",
 };
 
 app.use(cors(corsOptions));

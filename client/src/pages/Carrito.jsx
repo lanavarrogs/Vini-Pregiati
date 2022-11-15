@@ -23,7 +23,7 @@ const Carrito = () => {
       })
     }else{
       try {
-          const { data } = await axios.post('http://localhost:8080/api/purchase', {id: auth.id , products: carItems})
+          const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/purchase', {id: auth.id , products: carItems})
           if(data.message === 'purchase created'){
             Swal.fire({
               icon: 'success',
