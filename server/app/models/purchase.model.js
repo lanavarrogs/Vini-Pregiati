@@ -9,8 +9,10 @@ const Purchase = mongoose.model(
     },
     products: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
+        product: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Product",
+        },
       },
     ],
   })
