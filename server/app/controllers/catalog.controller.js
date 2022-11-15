@@ -8,14 +8,16 @@ exports.catalogBoard = async (req, res) => {
 };
 
 exports.catalogPurchase = async (req, res) => {
+  const ids = [];
   for (let i = 0; i <= req.body.products.length - 1; i++) {
     const product = req.body.products[i];
     product.status = "purchased";
+    ids.push(product._id);
   }
 
   const purchase = new Purchase({
     user: req.body.id,
-    products: req.body.products,
+    products: ids,
   });
 
   purchase.save((err, user) => {

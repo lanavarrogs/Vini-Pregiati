@@ -7,7 +7,12 @@ const Purchase = mongoose.model(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    products: [Product],
+    products: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
   })
 );
 
