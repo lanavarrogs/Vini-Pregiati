@@ -12,6 +12,9 @@ exports.catalogPurchase = async (req, res) => {
   for (let i = 0; i <= req.body.products.length - 1; i++) {
     const product = req.body.products[i];
     product.status = "purchased";
+    if (product.amount > 0) {
+      product.amount = product.amount - 1;
+    }
     ids.push(product._id);
   }
 
