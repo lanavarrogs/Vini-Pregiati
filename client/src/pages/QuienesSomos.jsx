@@ -4,7 +4,7 @@ const QuienesSomos = () => {
   return (
       <div className='container mx-auto mt-5 md:mt-20 p-5 md:flex md:justify-center'>
         <div className='md:w-2/3 lg:w-4/5'>
-          <h1 className="text-white font-black text-6xl text-center">Quíenes somos</h1>
+          <h1 className="text-white font-black text-6xl text-center">Quiénes somos</h1>
           <div className='my-10 bg-white shadow rounded-lg p-5'>
             <div className='m-4'>
               <h2 className='text-2xl font-bold text-gray-600 block'>Nuestra historia</h2>

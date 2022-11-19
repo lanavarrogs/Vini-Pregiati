@@ -88,9 +88,6 @@ const Header = () => {
             </ul>
 
             <ul className=' md:flex hidden md:items-center '>
-              <li className='mx-5'>
-                <SearchIcon/>
-              </li>
               <li className='mx-5 '>
                   <Link className='relative bottom-3' to='/carrito'>
                     <div className='bg-[#58D7C4] rounded-xl text-center relative top-3 left-3'>{totalCart}</div>

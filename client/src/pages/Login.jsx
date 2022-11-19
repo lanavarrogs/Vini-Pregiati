@@ -85,7 +85,7 @@ const Login = () => {
 
         <input
           type="submit"
-          value="Iniciar Sesion"
+          value="Iniciar Sesión"
           className="bg-[#F22E4B] w-full py-3 mb-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors"
         />
       </form>
@@ -94,12 +94,7 @@ const Login = () => {
           <Link
             className="block text-center my-5 text-slate-200 uppercase text-sm"
             to="/auth/register"
-          >No tienes Cuenta? Registrate</Link>
-
-          <Link
-            className="block text-center my-5 text-slate-200 uppercase text-sm"
-            to="/forgot-password"
-          >Olvidaste tu contraseña</Link>
+          >¿No tienes Cuenta? Registrate</Link>  
 
         </nav>
 

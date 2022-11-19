@@ -52,6 +52,7 @@ const Register = () => {
         msg: 'Los password no son iguales',
         error: true
       })
+      return;
     }
 
     setAlerta({})
@@ -155,7 +156,7 @@ const Register = () => {
           <Link
             className="block text-center my-5 text-slate-200 uppercase text-sm"
             to="/auth"
-          >Ya tienes cuenta? Incia sesion</Link>
+          >¿Ya tienes cuenta? Inicia sesión</Link>
 
         </nav>
 

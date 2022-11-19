@@ -48,11 +48,12 @@ const Descrption = () => {
             <img src={ wine } className='h-[350px]'/>
           </div>
           <div className='p-3 ml-10 w-5/6'>
-            <h3 className='font-bold text-2xl'>Descripcion:</h3>
+            <h3 className='font-bold text-2xl'>Descripción:</h3>
             <p className='text-lg my-5'>{product.description}</p>
             <p className='font-bold text-2xl'>Precio:</p>
             <p className='text-[#58D7C4] text-xl mb-10'>${product.price}</p>
             <button className='bg-[#F22E4B] p-3 mb-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors text-center' onClick={checkStock}>Agregar al carrito</button>
+            <Link to='/catalogo'>Regresar</Link>
           </div>
         </div>
       </div>

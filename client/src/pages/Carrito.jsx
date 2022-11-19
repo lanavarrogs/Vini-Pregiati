@@ -19,7 +19,7 @@ const Carrito = () => {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'El carito debe contener al menos un item',
+        text: 'El carrito debe contener al menos un item',
       })
     }else{
       try {

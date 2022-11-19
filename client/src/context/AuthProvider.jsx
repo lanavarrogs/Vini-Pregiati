@@ -51,7 +51,7 @@ const AuthProvider = ({children}) => {
   const logout = async () =>{
     
     try {
-      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com/:8080/api/auth/signout')
+      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signout')
       console.log(data)
       localStorage.removeItem('token')
       window.location.reload()
