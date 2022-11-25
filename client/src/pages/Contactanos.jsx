@@ -1,10 +1,15 @@
-
+import Swal from "sweetalert2"
 
 
 const Contactanos = () => {
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
     e.preventDefault()
+    Swal.fire({
+      icon: 'success',
+      title: 'Nos pondremos en contacto',
+      text: 'Gracias por enviar tu infromacion, nos pondremos en contacto rapidamente',
+    })
   }
 
   return (

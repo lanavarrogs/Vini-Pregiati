@@ -53,7 +53,7 @@ const Descrption = () => {
             <p className='font-bold text-2xl'>Precio:</p>
             <p className='text-[#58D7C4] text-xl mb-10'>${product.price}</p>
             <button className='bg-[#F22E4B] p-3 mb-5 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#BF243C] transition-colors text-center' onClick={checkStock}>Agregar al carrito</button>
-            <Link to='/catalogo'>Regresar</Link>
+            <Link to='/catalogo' className='bg-[#58D7C4] p-3 mb-5 ml-4 text-white uppercase font-bold rounded-xl hover:cursor-pointer hover:bg-[#37a392] transition-colors text-center'>Regresar</Link>
           </div>
         </div>
       </div>
