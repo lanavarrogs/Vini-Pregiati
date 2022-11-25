@@ -1,5 +1,5 @@
 import '../App.css'
-
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
           <h1 className='text-6xl text-white '> Vinos de todos los lados del mundo <span className='text-black font-bold'>Todos los Sabores</span></h1>
           <p className='mt-5 text-white'> ¿Dejar que los placeres del cuerpo sean repelidos por las consecuencias convenientes del presente, y proveer al dolor, porque busca dolores, o está cegado al dolor porque es como un arquitecto? <blockquote>Vini-Pregati</blockquote></p>
           <div className='flex justify-end'>
-            <button className='mx-5 my-2 py-3 px-4 text-white font-bold rounded bg-[#E82C48] hover:cursor-pointer hover:bg-[#BF243C] transition-colors '> Ir a Catálogo</button>
+            <Link className='mx-5 my-2 py-3 px-4 text-white font-bold rounded bg-[#E82C48] hover:cursor-pointer hover:bg-[#BF243C] transition-colors' to={'/catalogo'}> Ir a Catálogo</Link>
           </div>
         </div>
       <div>
