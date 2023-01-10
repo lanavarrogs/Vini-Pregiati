@@ -28,7 +28,7 @@ const Login = () => {
     
 
     try {
-      const { data } = await axios.post('8.tcp.ngrok.io:13236/api/auth/signin',{email,password})
+      const { data } = await axios.post('http://8.tcp.ngrok.io:13236/api/auth/signin',{email,password})
       if(data.token){
         localStorage.setItem('token',data.token)
         setAuth(data)

@@ -12,7 +12,7 @@ const CatalogProvider = ({children}) => {
 
     const obtenerCatalogo = async () => {
       try {
-        const { data } = await axios.get('8.tcp.ngrok.io:13236/api/catalog')
+        const { data } = await axios.get('http://8.tcp.ngrok.io:13236/api/catalog')
         setCatalog(data)
       } catch (error) {
         console.log(error)
@@ -24,7 +24,7 @@ const CatalogProvider = ({children}) => {
 
   const obtenerProducto = async code => {
     try {
-      const { data } = await axios.get(`8.tcp.ngrok.io:13236/api/catalog/${code}`)
+      const { data } = await axios.get(`http://8.tcp.ngrok.io:13236/api/catalog/${code}`)
       setProduct(data)
     } catch (error) {
       console.log('error')
