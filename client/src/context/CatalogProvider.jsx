@@ -12,7 +12,7 @@ const CatalogProvider = ({children}) => {
 
     const obtenerCatalogo = async () => {
       try {
-        const { data } = await axios.get('http://8.tcp.ngrok.io:13236/api/catalog')
+        const { data } = await axios.get('https://8.tcp.ngrok.io:13236/api/catalog')
         setCatalog(data)
       } catch (error) {
         console.log(error)
