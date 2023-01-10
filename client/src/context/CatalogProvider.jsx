@@ -12,7 +12,7 @@ const CatalogProvider = ({children}) => {
 
     const obtenerCatalogo = async () => {
       try {
-        const { data } = await axios.get('https://6706-2806-265-3484-802a-e936-bf49-6cae-8fb1.ngrok.io/api/catalog')
+        const { data } = await axios.get('https://c57b-2806-265-3484-802a-6d3c-82d1-e019-bab2.ngrok.io/api/catalog')
         setCatalog(data)
       } catch (error) {
         console.log(error)
@@ -24,7 +24,7 @@ const CatalogProvider = ({children}) => {
 
   const obtenerProducto = async code => {
     try {
-      const { data } = await axios.get(`https://6706-2806-265-3484-802a-e936-bf49-6cae-8fb1.ngrok.io/api/catalog/${code}`)
+      const { data } = await axios.get(`https://c57b-2806-265-3484-802a-6d3c-82d1-e019-bab2.ngrok.io/api/catalog/${code}`)
       setProduct(data)
     } catch (error) {
       console.log('error')
