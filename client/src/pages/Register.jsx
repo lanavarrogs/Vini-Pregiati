@@ -60,7 +60,7 @@ const Register = () => {
     //Register the user with the api connection
     let username = nombre;
     try {
-      const { data } = await axios.post('https://b28f-2806-265-3484-802a-69bb-8cb5-4f43-e5c6.ngrok.io/api/auth/signup', {username,email,password} )
+      const { data } = await axios.post('https://502a-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/auth/signup', {username,email,password} )
       
       setNombre('')
       setEmail('')
