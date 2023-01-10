@@ -32,7 +32,7 @@ const AuthProvider = ({children}) => {
       }
       
       try {
-        const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/user',config) 
+        const { data } = await axios.post('https://b28f-2806-265-3484-802a-69bb-8cb5-4f43-e5c6.ngrok.io/api/user',config) 
         setAuth(data)
         navigate('/')
       } catch (error) {
@@ -51,7 +51,7 @@ const AuthProvider = ({children}) => {
   const logout = async () =>{
     
     try {
-      const { data } = await axios.post('http://vinipregati.eastus.cloudapp.azure.com:8080/api/auth/signout')
+      const { data } = await axios.post('https://b28f-2806-265-3484-802a-69bb-8cb5-4f43-e5c6.ngrok.io/api/auth/signout')
       console.log(data)
       localStorage.removeItem('token')
       window.location.reload()

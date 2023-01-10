@@ -7,7 +7,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://vinipregati.eastus.cloudapp.azure.com",
+  origin: "https://vini-pregiati-7fka.vercel.app/",
 };
 
 app.use(cors(corsOptions));
