@@ -32,7 +32,7 @@ const AuthProvider = ({children}) => {
       }
       
       try {
-        const { data } = await axios.post('https://502a-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/user',config) 
+        const { data } = await axios.post('https://7864-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/user',config) 
         setAuth(data)
         navigate('/')
       } catch (error) {
@@ -51,7 +51,7 @@ const AuthProvider = ({children}) => {
   const logout = async () =>{
     
     try {
-      const { data } = await axios.post('https://502a-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/auth/signout')
+      const { data } = await axios.post('https://7864-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/auth/signout')
       console.log(data)
       localStorage.removeItem('token')
       window.location.reload()

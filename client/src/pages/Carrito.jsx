@@ -23,7 +23,7 @@ const Carrito = () => {
       })
     }else{
       try {
-          const { data } = await axios.post('https://502a-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/purchase', {id: auth.id , products: carItems})
+          const { data } = await axios.post('https://7864-2806-107e-13-6a40-3964-ba0e-53db-d97f.ngrok.io/api/purchase', {id: auth.id , products: carItems})
           if(data.message === 'purchase created'){
             Swal.fire({
               icon: 'success',
