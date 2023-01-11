@@ -12,7 +12,7 @@ const CatalogProvider = ({children}) => {
 
     const obtenerCatalogo = async () => {
       try {
-        const { data } = await axios.get('https://6a7e-2806-265-3484-802a-6d3c-82d1-e019-bab2.ngrok.io/api/catalog')
+        const { data } = await axios.get('https://vinipregati.onrender.com/api/catalog')
         setCatalog(data)
       } catch (error) {
         console.log(error)
@@ -24,7 +24,7 @@ const CatalogProvider = ({children}) => {
 
   const obtenerProducto = async code => {
     try {
-      const { data } = await axios.get(`https://6a7e-2806-265-3484-802a-6d3c-82d1-e019-bab2.ngrok.io/api/catalog/${code}`)
+      const { data } = await axios.get(`https://vinipregati.onrender.com/api/catalog/${code}`)
       setProduct(data)
     } catch (error) {
       console.log('error')
